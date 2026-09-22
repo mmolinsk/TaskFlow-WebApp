@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List & Carousel</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick-theme.css" />
+
+</head>
+
+
+<body>
+    <section class="quote-panel" aria-live="polite" aria-label="Inspirational quote">
+        <div class="quote-panel-header">
+            <span class="quote-kicker">Daily perspective</span>
+            <span id="quote-category">Loading...</span>
+        </div>
+        <blockquote id="quote-text">Finding a thought worth carrying...</blockquote>
+        <p id="quote-author"></p>
+        <a class="quote-attribution" href="https://zenquotes.io/" target="_blank" rel="noopener noreferrer">
+            Quotes by ZenQuotes API
+        </a>
+    </section>
+
+    <h1>My To-Do List</h1>
+
+    <div id="todo-input-container">
+        <input type="text" id="todo-input" placeholder="Add a new task...">
+        <!-- Date picker input selector framework -->
+        <input type="date" id="todo-date">
+        <button id="add-button">Add Task</button>
+    </div>
+
+    <div id="todo-list"></div>
+
+    <div class="my-slider-wrapper">
+        <!-- Slides will automatically appear here when tasks are starred -->
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="slick.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

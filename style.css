@@ -1,0 +1,359 @@
+        @import url('https://googleapis.com');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            background: radial-gradient(circle at top left, #38bdf8 0%, transparent 35%),
+                radial-gradient(circle at bottom right, #8b5cf6 0%, transparent 35%),
+                #0f172a;
+            padding: 50px 20px;
+        }
+
+        .quote-panel {
+            max-width: 900px;
+            margin: 0 auto 44px;
+            padding: 26px 30px 24px;
+            color: #f8fafc;
+            background: linear-gradient(135deg, rgba(15, 23, 42, .88), rgba(30, 41, 59, .7));
+            border: 1px solid rgba(125, 211, 252, .45);
+            border-left: 5px solid #fbbf24;
+            border-radius: 16px;
+            box-shadow: 0 14px 34px rgba(2, 6, 23, .35), 0 0 24px rgba(56, 189, 248, .12);
+            animation: quoteReveal .6s ease both;
+        }
+
+        .quote-panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 16px;
+            color: #fbbf24;
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        .quote-kicker {
+            color: #7dd3fc;
+        }
+
+        #quote-text {
+            margin: 0;
+            font-family: Georgia, serif;
+            font-size: clamp(1.35rem, 3vw, 2rem);
+            line-height: 1.35;
+        }
+
+        #quote-author {
+            margin: 14px 0 12px;
+            color: #cbd5e1;
+            font-size: .95rem;
+        }
+
+        #quote-author::before {
+            content: '— ';
+            color: #fbbf24;
+        }
+
+        .quote-attribution {
+            color: #7dd3fc;
+            font-size: .75rem;
+            text-decoration: none;
+        }
+
+        .quote-attribution:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes quoteReveal {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 4rem;
+            margin-bottom: 40px;
+        }
+
+        #todo-input-container {
+            max-width: 900px;
+            margin: 0 auto 30px;
+            display: flex;
+            gap: 15px;
+        }
+
+        #todo-input {
+            flex: 1;
+            padding: 20px;
+            background: #0b1638;
+            border: 2px solid #38bdf8;
+            border-radius: 20px;
+            color: white;
+            font-size: 1.1rem;
+            outline: none;
+            box-shadow: 0 0 20px rgba(56, 189, 248, .25);
+        }
+
+        #todo-input::placeholder {
+            color: #94a3b8;
+        }
+
+        #add-button {
+            border: none;
+            border-radius: 20px;
+            padding: 0 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: white;
+            cursor: pointer;
+            background: linear-gradient(135deg, #38bdf8, #8b5cf6);
+            transition: .3s;
+        }
+
+        #add-button:hover {
+            transform: translateY(-3px);
+        }
+
+        #todo-list {
+            max-width: 900px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .task-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 20px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 18px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, .25);
+            animation: slideIn .25s ease;
+        }
+
+        .task-item span {
+            flex: 1;
+            color: white;
+            font-size: 1.05rem;
+            font-weight: 500;
+        }
+
+        .done-button,
+        .delete-button {
+            border: none;
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            color: white;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: .2s;
+        }
+
+        .done-button {
+            background: #22c55e;
+            font-weight: bold;
+        }
+
+        .done-button:hover {
+            background: #16a34a;
+            transform: scale(1.1);
+        }
+
+        .delete-button {
+            background: #ef4444;
+        }
+
+        .delete-button:hover {
+            background: #dc2626;
+            transform: scale(1.1);
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Carousel Layout */
+        .my-slider-wrapper {
+            max-width: 600px;
+            margin: 50px auto 0;
+            color: white;
+            text-align: center;
+        }
+
+        .slide-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* STAR BUTTON */
+        .star-button {
+            border: none;
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: .2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .star-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: #eab308;
+            transform: scale(1.1);
+        }
+
+        /* Active Gold Star State */
+        .star-button.starred {
+            background: rgba(234, 179, 8, 0.2);
+            color: #eab308;
+            border: 1px solid rgba(234, 179, 8, 0.4);
+            text-shadow: 0 0 10px rgba(234, 179, 8, 0.5);
+        }
+
+        /* VALIDATION MODIFIED CSS CLASSES */
+        #add-button.invalid-state {
+            background: #ef4444 !important;
+            box-shadow: 0 0 20px rgba(239, 68, 68, 0.6);
+            transform: shake 0.2s ease;
+        }
+
+        #add-button.valid-state {
+            background: #22c55e !important;
+            box-shadow: 0 0 20px rgba(34, 197, 94, 0.6);
+        }
+
+        #todo-date {
+            background: #0b1638;
+            border: 2px solid #38bdf8;
+            border-radius: 20px;
+            padding: 15px;
+            color: white;
+            font-family: inherit;
+            outline: none;
+            box-shadow: 0 0 20px rgba(56, 189, 248, .25);
+            transition: border-color 0.3s;
+        }
+
+        /* COMPLETED TASK GREEN NEON GLOW */
+        .task-item.completed-glow,
+        .slide-item.completed-glow {
+            background: rgba(34, 197, 94, 0.12) !important;
+            border: 2px solid #22c55e !important;
+            box-shadow: 0 0 25px rgba(34, 197, 94, 0.4) !important;
+            transition: all 0.4s ease;
+        }
+
+        /* CONTAINER & INPUT BASE STYLING */
+        #todo-date {
+            background: #0b1638;
+            border: 2px solid #38bdf8;
+            border-radius: 20px;
+            padding: 15px 20px;
+            color: white;
+            font-family: inherit;
+            font-size: 1.1rem;
+            outline: none;
+            box-shadow: 0 0 20px rgba(56, 189, 248, .25);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        /* Change input border glow on focus */
+        #todo-date:focus {
+            box-shadow: 0 0 25px rgba(56, 189, 248, .5);
+            border-color: #8b5cf6;
+            /* Turns purple on active focus */
+        }
+
+        /* 2. CHROME & EDGE SPECIFIC INTERNAL STYLING */
+
+        /* Styles the placeholder / text field split inputs */
+        #todo-date::-webkit-datetime-edit-text,
+        #todo-date::-webkit-datetime-edit-month-field,
+        #todo-date::-webkit-datetime-edit-day-field,
+        #todo-date::-webkit-datetime-edit-year-field {
+            color: #94a3b8;
+            /* Muted gray text until selected */
+        }
+
+        /* Highlights the text fields to white once a date is active */
+        #todo-date::-webkit-datetime-edit-fields-wrapper {
+            color: white;
+        }
+
+        /* STYLES THE CALENDAR ICON ICON */
+        #todo-date::-webkit-calendar-picker-indicator {
+            /* Uses a modern CSS filter trick to turn the default black icon into bright cyan blue (#38bdf8) */
+            filter: invert(65%) sepia(85%) saturate(1450%) hue-rotate(175deg) brightness(102%) contrast(98%);
+            cursor: pointer;
+            border-radius: 5px;
+            padding: 5px;
+            transition: transform 0.2s ease;
+        }
+
+        /* Makes the icon pop outward slightly when hovered */
+        #todo-date::-webkit-calendar-picker-indicator:hover {
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 680px) {
+            body {
+                padding: 28px 14px;
+            }
+
+            .quote-panel {
+                padding: 22px 20px;
+                margin-bottom: 30px;
+            }
+
+            .quote-panel-header {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 6px;
+            }
+
+            #todo-input-container {
+                flex-direction: column;
+            }
+
+            #add-button {
+                min-height: 54px;
+            }
+        }
